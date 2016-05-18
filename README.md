@@ -11,5 +11,5 @@ Adds a Sapic preview button to Steam Market background listings
 3. Confirm that you want to install the script.
 4. The script should now be installed and ready to use.
 
-Preview:
+##Preview:
 ![premium](http://i.oddball.tf/70MDd.gif?raw=true)
