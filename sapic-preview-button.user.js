@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Preview Steam Background on Sapic
 // @namespace    http://steamcommunity.com/id/theoddball/
-// @version      1.1
+// @version      2.0
 // @description  Adds a Sapic preview button to Steam Market background listings
 // @author       The Oddball
 // @include      /http:\/\/steamcommunity\.com\/market\/listings\/753\/.*/
+// @include      /http:\/\/steamcommunity\.com\/id\/.*\/inventory\/.*/
+// @include      /https:\/\/steamcommunity\.com\/id\/.*\/inventory\/.*/
 // @include      /https:\/\/steamcommunity\.com\/market\/listings\/753\/.*/
 // @grant        none
 // @downloadURL  https://theoddball.github.io/sapic-preview-button.user.js
@@ -12,13 +14,33 @@
 // ==/UserScript==
 var $ = $J;
 
-function sapicButton() {
-		var $viewFullLink = $("#largeiteminfo_item_actions").find("a");
-		if ($viewFullLink.length) {
-			var bgLink = $viewFullLink.attr('href');
-			if (bgLink) {
-				$viewFullLink.after('<a class="sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="http://sapic.github.io/#' + bgLink + '"><span>Preview On Sapic</span></a>');
+function scmSapicButton() {
+		var viewFullButton = $("#largeiteminfo_item_actions").find("a");
+		if (viewFullButton.length) {
+			var href = viewFullButton.attr('href');
+			if (href) {
+				viewFullButton.after('<a class="scm_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="http://sapic.github.io/#' + href + '"><span>Preview On Sapic</span></a>');
 			}
         }
 }
-sapicButton();
+setInterval(function() {
+		var itemActions = $(".inventory_iteminfo").find(".item_desc_content").find(".item_desc_description").find("#iteminfo1_item_actions");
+        var viewFullButton = $(itemActions).find("a").first();
+		if (viewFullButton.length) {
+			var href = /public\/images\/items/.test($(viewFullButton).attr("href"));
+			if (href && !(itemActions).find(".inv_sapic_button:not(#iteminfo0_item_actions)").length) {
+				viewFullButton.after('<a class="inv_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="http://sapic.github.io/#' + href + '"><span>Preview On Sapic</span></a>');
+			}
+        }
+}, 200);
+setInterval(function() {
+		var itemActions = $(".inventory_iteminfo").find(".item_desc_content").find(".item_desc_description").find("#iteminfo0_item_actions");
+        var viewFullButton = $(itemActions).find("a").first();
+		if (viewFullButton.length) {
+			var href = /public\/images\/items/.test($(viewFullButton).attr("href"));
+			if (href && !(itemActions).find(".inv_sapic_button:not(#iteminfo1_item_actions)").length) {
+				viewFullButton.after('<a class="inv_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="http://sapic.github.io/#' + href + '"><span>Preview On Sapic</span></a>');
+			}
+        }
+}, 200);
+scmSapicButton();
