@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Preview Steam Background on Sapic
 // @namespace    http://steamcommunity.com/id/theoddball/
-// @version      2.2
+// @version      2.3
 // @description  Adds a Sapic preview button to Steam Market background listings
 // @author       The Oddball
 // @include      /http:\/\/steamcommunity\.com\/.*/
@@ -16,6 +16,7 @@ function scmSapicButton() {
 		var viewFullButton = $("#largeiteminfo_item_actions").find("a");
 		if (viewFullButton.length) {
 			var href = viewFullButton.attr('href');
+			var bgLink = /public\/images\/items/.test($(viewFullButton).attr("href"));
 			if (href) {
 				viewFullButton.after('<a class="scm_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="http://sapic.github.io/#' + href + '"><span>Preview On Sapic</span></a>');
 			}

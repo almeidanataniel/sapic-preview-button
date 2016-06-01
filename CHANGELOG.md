@@ -1,3 +1,6 @@
+### v2.3
+Fixed Preview button showing on non-background items
+
 ### v2.2
 Fixed a rare bug where script wouldn't load
 
