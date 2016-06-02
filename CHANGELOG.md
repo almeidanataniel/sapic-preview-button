@@ -1,3 +1,7 @@
+### v2.3.1
+Really fixed Preview button showing on non-background items
+Improved some backend/formatting stuff
+
 ### v2.3
 Fixed Preview button showing on non-background items
 
