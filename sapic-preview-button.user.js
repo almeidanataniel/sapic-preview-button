@@ -7,8 +7,8 @@
 // @include      /http:\/\/steamcommunity\.com\/.*/
 // @include      /https:\/\/steamcommunity\.com\/.*/
 // @grant        none
-// @downloadURL  https://theoddball.github.io/sapic-preview-button.user.js
-// @updateURL    https://theoddball.github.io/sapic-preview-button.meta.js
+// @downloadURL  https://github.com/theoddball/sapic-preview-button/raw/master/sapic-preview-button.user.js
+// @updateURL    https://github.com/theoddball/sapic-preview-button/raw/master/sapic-preview-button.meta.js
 // ==/UserScript==
 var $ = $J;
 
