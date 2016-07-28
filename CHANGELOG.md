@@ -1,3 +1,6 @@
+### v2.4.1
+Updated to https://steam.design
+
 ### v2.3.1
 Really fixed Preview button showing on non-background items
 Improved some backend/formatting stuff

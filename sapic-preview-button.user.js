@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Preview Steam Background on Sapic
 // @namespace    http://oddball.tf
-// @version      2.4
+// @version      2.4.1
 // @description  Adds a Sapic preview button to Steam Market background listings
 // @author       The Oddball
 // @include      /http:\/\/steamcommunity\.com\/.*/
@@ -18,7 +18,7 @@ function scmSapicButton() {
         var href = viewFullButton.attr('href');
         var bgLink = /public\/images\/items/.test($(viewFullButton).attr("href"));
         if (bgLink) {
-            viewFullButton.after('<a class="scm_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="htts://steam.design/#' + href + '"><span>Preview On steam.design</span></a>');
+            viewFullButton.after('<a class="scm_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="https://steam.design/#' + href + '"><span>Preview on Sapic</span></a>');
         }
     }
 }
@@ -30,7 +30,7 @@ function invSapicButton(){
             var bgLink = /public\/images\/items/.test($(viewFullButton).attr("href"));
             var href = viewFullButton.attr('href');
             if (bgLink && !(itemActions).find(".inv_sapic_button:not(#iteminfo0_item_actions)").length) {
-                viewFullButton.after('<a class="inv_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="htts://steam.design/#' + href + '"><span>Preview On steam.design</span></a>');
+                viewFullButton.after('<a class="inv_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="https://steam.design/#' + href + '"><span>Preview on Sapic</span></a>');
             }
         }
     }, 200);
@@ -41,7 +41,7 @@ function invSapicButton(){
 			var bgLink = /public\/images\/items/.test($(viewFullButton).attr("href"));
             var href = viewFullButton.attr('href');
 			if (bgLink && !(itemActions).find(".inv_sapic_button:not(#iteminfo1_item_actions)").length) {
-				viewFullButton.after('<a class="inv_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="htts://steam.design/#' + href + '"><span>Preview On steam.design</span></a>');
+				viewFullButton.after('<a class="inv_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="https://steam.design/#' + href + '"><span>Preview on Sapicspan></a>');
 			}
         }
     }, 200);
