@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Preview Steam Background on Sapic
+// @name         Preview Profile Background on steam.design
 // @namespace    http://oddball.tf
-// @version      2.3.3
-// @description  Adds a Sapic preview button to Steam Market background listings
+// @version      2.4
+// @description  Adds a steam.design preview button to SCM profile background listings and inventory.
 // @author       The Oddball
 // @include      /http:\/\/steamcommunity\.com\/.*/
 // @include      /https:\/\/steamcommunity\.com\/.*/
