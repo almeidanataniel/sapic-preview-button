@@ -1,5 +1,5 @@
 # sapic-preview-button
-Adds a Sapic preview button to Steam Market background listings
+Adds a Sapic preview button to Steam Market background listings and Inventory previews.
 
 ## Requirements
 * [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) (Chrome)
@@ -12,4 +12,4 @@ Adds a Sapic preview button to Steam Market background listings
 4. The script should now be installed and ready to use.
 
 ##Preview:
-![premium](http://i.oddball.tf/70MDd.gif?raw=true)
+![premium](http://i.oddball.tf/Wn6Db.webm?raw=true)
