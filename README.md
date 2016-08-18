@@ -12,4 +12,5 @@ Adds a Sapic preview button to Steam Market background listings and Inventory pr
 4. The script should now be installed and ready to use.
 
 ##Preview:
-![premium](http://i.oddball.tf/cumfh.gif?raw=true)
+![premium](http://i.oddball.tf/buT3v.gif?raw=true)
+![premium](http://i.oddball.tf/7vizx.gif?raw=true)
