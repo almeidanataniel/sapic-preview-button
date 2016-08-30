@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Preview Steam Background on Sapic
 // @namespace    http://oddball.tf
-// @version      2.4.2
+// @version      2.5
 // @description  Adds a Sapic preview button to Steam Market background listings
 // @author       The Oddball
 // @include      /http:\/\/steamcommunity\.com\/.*/
@@ -46,6 +46,18 @@ function invSapicButton(){
         }
     }, 200);
 }
+function settingsSapicButton(){
+    setInterval(function() {
+        var url = $("#profile_background_current_image").attr("src");
+        var sapicButton = $(".settings_sapic_button");
+        url = url.replace("?size=140x90&v=2", "");
+
+        $(".background_selector_launch_area").find(".btn_grey_white_innerfade.btn_small").first().before('<a class="settings_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="https://steam.design/#' + url + '"><span>Preview on Sapic</span></a>');
+        sapicButton.remove();
+    }, 200);
+}
+settingsSapicButton();
 scmSapicButton();
 invSapicButton();
+
 
