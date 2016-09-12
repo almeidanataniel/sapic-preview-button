@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Preview Steam Background on Sapic
 // @namespace    http://oddball.tf
-// @version      2.6
+// @version      2.6.1
 // @description  Adds a Sapic preview button to Steam Market background listings
 // @author       The Oddball
 // @include      /http:\/\/steamcommunity\.com\/.*/
@@ -18,7 +18,6 @@ function load(){
     var sce = /steamcardexchange/.test(hostname);
     var href = window.location.href;
     if(steam){
-
         if(/\/753\//.test(href)){
             scmSapicButton();
         } else if(/\/inventory\//.test(href)){
@@ -26,8 +25,7 @@ function load(){
         } else if(/\/edit/.test(href)){
             settingsSapicButton();
         }
-    }
-    if(sce && /gamepage-appid/.test(href)){
+    } else if(sce && /gamepage-appid/.test(href)){
         sceSapicButton();
     }
 }
