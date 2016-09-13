@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Preview Steam Background on Sapic
 // @namespace    http://oddball.tf
-// @version      2.6.1
+// @version      2.6.2
 // @description  Adds a Sapic preview button to Steam Market background listings
 // @author       The Oddball
 // @include      /http:\/\/steamcommunity\.com\/.*/
@@ -12,20 +12,20 @@
 // @downloadURL  https://github.com/theoddball/sapic-preview-button/raw/master/sapic-preview-button.user.js
 // @updateURL    https://github.com/theoddball/sapic-preview-button/raw/master/sapic-preview-button.meta.js
 // ==/UserScript==
-function load(){
+function load() {
     var hostname = window.location.hostname;
     var steam = /steamcommunity/.test(hostname);
     var sce = /steamcardexchange/.test(hostname);
     var href = window.location.href;
-    if(steam){
-        if(/\/753\//.test(href)){
+    if (steam) {
+        if (/\/753\//.test(href)) {
             scmSapicButton();
-        } else if(/\/inventory\//.test(href)){
+        } else if (/\/inventory\//.test(href)) {
             invSapicButton();
-        } else if(/\/edit/.test(href)){
+        } else if (/\/edit/.test(href)) {
             settingsSapicButton();
         }
-    } else if(sce && /gamepage-appid/.test(href)){
+    } else if (sce && /gamepage-appid/.test(href)) {
         sceSapicButton();
     }
 }
@@ -41,7 +41,8 @@ function scmSapicButton() {
         }
     }
 }
-function invSapicButton(){
+
+function invSapicButton() {
     var $ = $J;
     setInterval(function() {
         var itemActions = $(".inventory_iteminfo").find(".item_desc_content").find(".item_desc_description").find("#iteminfo1_item_actions");
@@ -55,18 +56,19 @@ function invSapicButton(){
         }
     }, 200);
     setInterval(function() {
-		var itemActions = $(".inventory_iteminfo").find(".item_desc_content").find(".item_desc_description").find("#iteminfo0_item_actions");
+        var itemActions = $(".inventory_iteminfo").find(".item_desc_content").find(".item_desc_description").find("#iteminfo0_item_actions");
         var viewFullButton = $(itemActions).find("a").first();
-		if (viewFullButton.length) {
-			var bgLink = /public\/images\/items/.test($(viewFullButton).attr("href"));
+        if (viewFullButton.length) {
+            var bgLink = /public\/images\/items/.test($(viewFullButton).attr("href"));
             var href = viewFullButton.attr('href');
-			if (bgLink && !(itemActions).find(".inv_sapic_button:not(#iteminfo1_item_actions)").length) {
-				viewFullButton.after('<a class="inv_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="https://steam.design/#' + href + '"><span>Preview on Sapic</span></a>');
-			}
+            if (bgLink && !(itemActions).find(".inv_sapic_button:not(#iteminfo1_item_actions)").length) {
+                viewFullButton.after('<a class="inv_sapic_button btn_small btn_grey_white_innerfade" target="_blank" href="https://steam.design/#' + href + '"><span>Preview on Sapic</span></a>');
+            }
         }
     }, 200);
 }
-function settingsSapicButton(){
+
+function settingsSapicButton() {
     var $ = $J;
     setInterval(function() {
         var url = $('#profile_background_current_image').attr("src");
@@ -77,12 +79,13 @@ function settingsSapicButton(){
         sapicButton.remove();
     }, 200);
 }
-function sceSapicButton(){
-    $('.showcase-element').find('.button-blue.preview').each(function (){
+
+function sceSapicButton() {
+    $('.showcase-element').find('.button-blue.preview').each(function() {
         var href = $(this).parent().parent().find('.element-link-right').attr("href");
         $(this).parent().find('.button-blue.preview').before('<a class="button-blue" style="bottom: 5px;" target="_blank" href="https://steam.design/#' + href + '"><span>Preview on Sapic</span></a>');
     });
-    $('.button-blue.market').each(function (){
+    $('.button-blue.market').each(function() {
         $(this).css('top', '175px');
     });
 }
