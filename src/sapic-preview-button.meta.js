@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Preview Steam Background on Sapic
 // @namespace    http://oddball.tf
-// @version      2.6.2
+// @version      2.7
 // @description  Adds a Sapic preview button to Steam Market background listings
 // @author       The Oddball
 // @include      /http:\/\/steamcommunity\.com\/.*/
